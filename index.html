@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/main.css">
+	<script src="sweetalert2.all.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+	<title>Document</title>
+
+</head>
+
+
+<body>
+
+	<div id="block">
+		<div id="licenses_plans">
+			<form action="#" method="POST">
+				<div class="license_correct">
+					<div id="radio_block">
+						<label class="label">
+							<input type="radio" name="license" class="radio" value="13" id="first">
+							<span class="fake"></span>
+
+						</label>
+					</div>
+					<div class="wrapper">
+						<div class="text_licenses">
+							<p>LICENSE PLAN #1</p>
+						</div>
+						<div class="price_licenses">
+							<p>$13 per license</p>
+						</div>
+					</div>
+				</div>
+				<div class="license_correct">
+					<div id="radio_block">
+						<label class="label">
+							<input type="radio" name="license" class="radio" value="22" id="second">
+							<span class="fake"></span>
+
+						</label>
+					</div>
+					<div class="wrapper">
+						<div class="text_licenses">
+							<p>LICENSE PLAN #2</p>
+						</div>
+						<div class="price_licenses">
+							<p>$22 per license</p>
+						</div>
+					</div>
+				</div>
+				<div class="license_correct">
+
+					<div id="radio_block">
+						<label class="label">
+							<input type="radio" name="license" class="radio" value="34" id="third">
+							<span class="fake"></span>
+
+						</label>
+					</div>
+					<div class="wrapper">
+						<div class="text_licenses">
+							<p>LICENSE PLAN #3</p>
+						</div>
+						<div class="price_licenses">
+							<p>$34 per license</p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="number_of_licenses">
+			<div class="number_wrapper">
+				<div id="number_text">
+					<p>Number of Licenses:</p>
+				</div>
+				<div class="input_number">
+					<input type="number" id="number">
+
+				</div>
+			</div>
+		</div>
+		<div id="total_block">
+			<div id="total">
+				<p>TOTAL: <span id="total_cost">$340</span><span><sup>us</sup></span> </p>
+			</div>
+		</div>
+		<div id="button" onclick="Total();">
+			<div id="button_s">
+				<p>BUY NOW</p>
+			</div>
+		</div>
+		<div id="bottom">
+			<p>Selected plan: #3</p>
+		</div>
+	</div>
+
+	<script>
+
+		let frm = document.forms[0];
+		frm.license[0].onchange = function () {
+			console.log("license 0:" + frm.license[0].checked);
+
+		}
+		frm.license[1].onchange = function () {
+			console.log("license 1:" + frm.license[1].checked);
+		}
+		frm.license[2].onchange = function () {
+			console.log("license 2:" + frm.license[2].checked);
+		}
+		function Total() {
+			var y = document.getElementById("number");
+			var i = document.getElementById("total_cost");
+			var f = frm.license[0].checked;
+			var s = frm.license[1].checked;
+			var t = frm.license[2].checked;
+			if (f == true) {
+				Swal.fire("Total cost: " + 13 * y.value + " US");
+				i.innerHTML = (13 * y.value);
+			} else if (s == true) {
+				Swal.fire("Total cost: " + 22 * y.value + " US");
+				i.innerHTML = (22 * y.value);
+			} else if (t == true) {
+				Swal.fire("Total cost: " + 34 * y.value + " US");
+				i.innerHTML = (34 * y.value);
+			}
+		}
+
+
+
+	</script>
+
+
+</body>
+
+</html>
